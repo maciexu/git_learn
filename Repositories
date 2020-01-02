@@ -1,6 +1,35 @@
 To view the details of a specific commit, you use the command git show with the first few characters of the commit's hash. 
 git log->press space till end and press q to quit the paged display.
-git show XXXX
+git show XXXX(hash id)
+
+git show HEAD~1
+
+git annotate filename
+
+git diff ID1..ID2
+git diff HEAD~1..HEAD~3 shows the differences between the state of the repository one commit in the past and its state three commits in the past.
+
+The command git clean -n will show you a list of files that are in the repository, but whose history Git is not currently tracking. A similar command git clean -f will then delete those files.
+
+Use this command carefully: git clean only works on untracked files, so by definition, their history has not been saved. If you delete them with git clean -f, they're gone for good.
+
+ls????
 
 
+How can I see how Git is configured?
+Like most complex pieces of software, Git allows you to change its default settings. To see what the settings are, you can use the command git config --list with one of three additional options:
 
+--system: settings for every user on this computer.
+--global: settings for every one of your projects.
+--local: settings for one specific project.
+Each level overrides the one above it, so local settings (per-project) take precedence over global settings (per-user), which in turn take precedence over system settings (for all users on the computer).
+
+git config --list
+git config --lost --local
+
+
+To change a configuration value for all of your projects on a particular computer, run the command:
+
+git config --global setting value
+Using this command, you specify the setting you want to change and the value you want to set. The settings that identify your name and email address are user.name and user.email, respectively.
+git config --global user.email rep.loop@datacamp.com
