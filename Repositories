@@ -1,0 +1,6 @@
+To view the details of a specific commit, you use the command git show with the first few characters of the commit's hash. 
+git log->press space till end and press q to quit the paged display.
+git show XXXX
+
+
+
